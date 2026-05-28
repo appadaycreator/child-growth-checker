@@ -3,7 +3,7 @@
   "short_name": "child-growth",
   "start_url": "/child-growth-checker/",
   "display": "standalone",
-  "background_color": "#6366f1",
+  "background_color": "#ffffff",
   "theme_color": "#7c3aed",
   "scope": "/child-growth-checker/"
 }
