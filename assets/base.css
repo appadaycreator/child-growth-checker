@@ -1,0 +1,163 @@
+/* ==========================================================
+   子どもの成長曲線チェッカー — 共通トークン & ベーススタイル
+   ========================================================== */
+:root {
+  --teal: #1FA89B;
+  --teal-dark: #14897E;
+  --teal-deep: #0E6F66;
+  --teal-soft: #E2F4F1;
+  --teal-tint: #F0FAF8;
+  --coral: #F0685C;
+  --coral-dark: #E3544A;
+  --coral-soft: #FDEDE9;
+  --cream: #FCF6E6;
+  --cream-deep: #FAF0D8;
+  --sky: #EAF6FA;
+  --sky-deep: #D9EEF5;
+  --ink: #3D4A52;
+  --ink-soft: #5C6B74;
+  --ink-faint: #8B989F;
+  --line: #E4ECEE;
+  --yellow: #F4C443;
+  --pink: #F2A4B4;
+  --band-pink: #F8D8DD;
+  --band-blue: #CCDFF1;
+  --band-teal: #BCE5DD;
+  --white: #FFFFFF;
+  --font-round: 'M PLUS Rounded 1c', 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
+  --radius-card: 18px;
+  --radius-pill: 999px;
+  --shadow-card: 0 6px 22px rgba(31, 122, 112, 0.08);
+  --shadow-pop: 0 12px 34px rgba(31, 122, 112, 0.14);
+  --maxw: 1120px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  font-family: var(--font-round);
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul, ol { list-style: none; }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+.btn-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  background: linear-gradient(180deg, var(--coral), var(--coral-dark));
+  color: #fff; font-weight: 800; letter-spacing: 0.04em;
+  border-radius: var(--radius-pill);
+  padding: 16px 38px; font-size: 18px;
+  box-shadow: 0 8px 20px rgba(227, 84, 74, 0.32), inset 0 -3px 0 rgba(0,0,0,0.08);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(227, 84, 74, 0.4), inset 0 -3px 0 rgba(0,0,0,0.08); }
+.btn-cta .arrow { transition: transform .18s ease; }
+.btn-cta:hover .arrow { transform: translateX(4px); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  white-space: nowrap;
+  background: #fff; color: var(--teal-dark); font-weight: 800;
+  border: 2px solid var(--teal); border-radius: var(--radius-pill);
+  padding: 14px 32px; font-size: 17px;
+  box-shadow: 0 6px 16px rgba(31, 168, 155, 0.14);
+  transition: transform .18s ease, background .18s ease;
+}
+.btn-ghost:hover { transform: translateY(-2px); background: var(--teal-tint); }
+
+.sec-title {
+  text-align: center; font-size: 32px; font-weight: 800; color: var(--teal-dark);
+  letter-spacing: 0.02em; line-height: 1.4; margin-bottom: 14px;
+  text-wrap: pretty;
+}
+.sec-title .accent { color: var(--coral); font-size: 1.25em; }
+
+.check-item { display: flex; align-items: flex-start; gap: 9px; font-size: 15px; }
+.check-item .ck {
+  flex: none; width: 20px; height: 20px; margin-top: 4px;
+  border-radius: 50%; background: var(--teal);
+  display: grid; place-items: center;
+}
+.check-item .ck::after {
+  content: ""; width: 9px; height: 5px; margin-top: -2px;
+  border-left: 2.5px solid #fff; border-bottom: 2.5px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.94); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header .inner {
+  max-width: var(--maxw); margin: 0 auto; padding: 0 24px;
+  height: 68px; display: flex; align-items: center; gap: 24px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 21px; color: var(--teal); letter-spacing: 0.01em; }
+.brand .logo-mark { width: 34px; height: 34px; flex: none; }
+.main-nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
+.main-nav a {
+  font-size: 14.5px; font-weight: 700; color: var(--ink-soft);
+  padding: 8px 12px; border-radius: 10px; transition: color .15s, background .15s;
+}
+.main-nav a:hover { color: var(--teal-dark); background: var(--teal-tint); }
+.header-cta {
+  display: inline-flex; align-items: center;
+  background: linear-gradient(180deg, var(--coral), var(--coral-dark));
+  color: #fff; font-weight: 800; font-size: 14px;
+  padding: 10px 22px; border-radius: var(--radius-pill);
+  box-shadow: 0 5px 12px rgba(227, 84, 74, 0.3);
+  transition: transform .15s;
+  white-space: nowrap;
+}
+.header-cta:hover { transform: translateY(-1px); }
+
+.hamburger { display: none; margin-left: auto; width: 44px; height: 44px; border-radius: 12px; position: relative; z-index: 220; }
+.hamburger span {
+  display: block; width: 22px; height: 2.5px; background: var(--teal-dark);
+  border-radius: 2px; margin: 5px auto; transition: transform .25s, opacity .2s;
+}
+.hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none; position: fixed; inset: 0; z-index: 210;
+  background: rgba(255,255,255,0.98);
+  padding: 96px 32px 32px;
+  flex-direction: column; gap: 6px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 18px; font-weight: 800; color: var(--ink);
+  padding: 14px 8px; border-bottom: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.mobile-menu a::after { content: "→"; color: var(--teal); font-size: 16px; }
+.mobile-menu .menu-cta { margin-top: 24px; }
+.mobile-menu .menu-cta::after { content: none; }
+
+.site-footer { background: var(--teal-deep); color: #D7EFEB; padding: 40px 0 32px; }
+.site-footer .inner { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; }
+.site-footer .brand { color: #fff; font-size: 18px; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 13.5px; font-weight: 700; }
+.site-footer nav a:hover { color: #fff; }
+.site-footer .copyright { width: 100%; font-size: 12px; color: #9DCDC6; text-align: center; margin-top: 10px; }
+
+@media (max-width: 960px) {
+  .main-nav, .site-header .header-cta { display: none; }
+  .hamburger { display: block; }
+}
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .sec-title { font-size: 24px; }
+  .btn-cta { padding: 15px 30px; font-size: 16px; }
+}
